@@ -1,0 +1,151 @@
+<!-- EDUCATION SECTION -->
+<section id="education" class="py-5 bg-light">
+    <div class="container px-3 px-md-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-primary mb-4 text-center">My Education</h2>
+        </div>
+
+        <div class="row g-4 rounded-4 d-flex flex-wrap justify-content-center p-4 bg-light shadow-lg">
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 shadow-lg rounded-4 h-100 education-card">
+                    <div class="card-body text-start p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="logo-box bg-primary bg-opacity-10 rounded p-2 me-3">
+                                <img src="assets/images/logo/kiu.png" alt="KIU Logo" class="institution-logo">
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-dark mb-1">B.Sc in CSE</h5>
+                                <p class="text-primary small mb-0">Kishoreganj University</p>
+                            </div>
+                        </div>
+                        <p class="text-muted small mb-3">
+                            <i class="bi bi-geo-alt-fill me-2"></i>Bangladesh
+                        </p>
+                        <p class="text-secondary" style="font-size: 0.9rem;">
+                            Bachelor of Science in Computer Science & Engineering from Kishoreganj University, 
+                            focusing on software development, algorithms, and system design.
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary rounded-pill me-1 mb-2">
+                                <i class="bi bi-calendar-check me-1"></i>2023 - Present
+                            </span>
+                            <a href="https://kiu.ac.bd/" target="_blank" class="badge bg-primary bg-opacity-10 text-primary rounded-pill me-1 mb-2 text-decoration-none">
+                                <i class="bi bi-link-45deg me-1"></i>Visit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 shadow-lg rounded-4 h-100 education-card">
+                    <div class="card-body text-start p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="logo-box bg-success bg-opacity-10 rounded p-2 me-3">
+                                <img src="assets/images/logo/kc.jpeg" alt="KC College Logo" class="institution-logo">
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-dark mb-1">H.S.C in Science</h5>
+                                <p class="text-success small mb-0">Govt. Keshab Chandra College</p>
+                            </div>
+                        </div>
+                        <p class="text-muted small mb-3">
+                            <i class="bi bi-geo-alt-fill me-2"></i>Jhenaidah, Bangladesh
+                        </p>
+                        <p class="text-secondary" style="font-size: 0.9rem;">
+                            Higher Secondary Certificate in Science from Government Keshab Chandra College, 
+                            building a strong foundation in physics, chemistry, mathematics, and biology.
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge bg-success rounded-pill me-1 mb-2">
+                                <i class="bi bi-calendar-check me-1"></i>2021 - 2023
+                            </span>
+                            <a href="https://www.kccollege.edu.bd/" target="_blank" class="badge bg-success bg-opacity-10 text-success rounded-pill me-1 mb-2 text-decoration-none">
+                                <i class="bi bi-link-45deg me-1"></i>Visit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 shadow-lg rounded-4 h-100 education-card">
+                    <div class="card-body text-start p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="logo-box bg-danger bg-opacity-10 rounded p-2 me-3">
+                                <img src="assets/images/logo/smhs.png" alt="SMHS Logo" class="institution-logo">
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-dark mb-1">S.S.C in Science</h5>
+                                <p class="text-danger small mb-0">Shishukali Model High School</p>
+                            </div>
+                        </div>
+                        <p class="text-muted small mb-3">
+                            <i class="bi bi-geo-alt-fill me-2"></i>Bangladesh
+                        </p>
+                        <p class="text-secondary" style="font-size: 0.9rem;">
+                            Secondary School Certificate in Science from Shishukali Model High School, 
+                            establishing the fundamental knowledge in science and mathematics.
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge bg-danger rounded-pill me-1 mb-2">
+                                <i class="bi bi-calendar-check me-1"></i>2014 - 2020
+                            </span>
+                            <a href="https://smhs1995.edu.bd/" target="_blank" class="badge bg-danger bg-opacity-10 text-danger rounded-pill me-1 mb-2 text-decoration-none">
+                                <i class="bi bi-link-45deg me-1"></i>Visit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<style>
+    .education-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+    .education-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .logo-box {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .institution-logo {
+        max-width: 50px;
+        max-height: 50px;
+        object-fit: contain;
+    }
+
+    .badge {
+        font-weight: 500;
+        padding: 0.4rem 0.8rem;
+    }
+</style>
+<script>
+    document.querySelectorAll('.education-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
+    });
+
+    document.querySelectorAll('.education-card').forEach(card => {
+        card.addEventListener('click', function() {
+            this.classList.add('animate__pulse');
+            setTimeout(() => {
+                this.classList.remove('animate__pulse');
+            }, 500);
+        });
+    });
+</script>
