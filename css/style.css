@@ -1,0 +1,201 @@
+/* ==============================
+   SECTION WIDTH ALIGNMENT
+============================== */
+.section-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+/* ==============================
+   GLOBAL STYLES
+============================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    padding: 100px 0;
+    position: relative; /* for scrollspy & section positioning */
+}
+
+/* ==============================
+   NAVBAR STYLES
+============================== */
+.navbar {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    background: rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.navbar .container {
+    max-width: 1140px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+}
+
+.navbar-brand img {
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: #0d6efd !important;
+}
+
+.navbar-nav.align-items-center {
+    align-items: center;
+}
+/* ==============================
+   INTRO / HERO SECTION
+============================== */
+#intro {
+    min-height: 100vh; /* Use min-height instead of fixed height */
+    padding-top: 70px; /* space for navbar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background-color: #f8f9fa;
+    overflow: hidden;
+}
+
+/* Scroll Down Mouse Icon Container */
+#intro .mouse-container {
+    position: absolute;
+    bottom: 15px; /* small padding from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2;
+}
+
+/* Hide mouse icon on small screens */
+@media (max-width: 767.98px) {
+    #intro .mouse-container {
+        display: none;
+    }
+}
+
+/* ==============================
+   SCROLL DOWN MOUSE ICON
+============================== */
+#intro .mouse-icon {
+    width: 28px;
+    height: 45px;
+    border: 2px solid #0d6efd;
+    border-radius: 20px;
+    position: relative;
+    margin: 0 auto;
+}
+
+#intro .mouse-icon .wheel {
+    width: 4px;
+    height: 10px;
+    background: #0d6efd;
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll 1.2s infinite;
+}
+
+@keyframes scroll {
+    0% { opacity: 1; transform: translate(-50%, 0); }
+    50% { opacity: 0.5; transform: translate(-50%, 8px); }
+    100% { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* ==============================
+   RESPONSIVE / MOBILE FIXES
+============================== */
+@media (max-width: 767.98px) {
+    /* Hide mouse icon on small screens */
+    #intro .mouse-icon {
+        display: none;
+    }
+
+    /* Buttons stack vertically */
+    #intro .d-flex.justify-content-center.gap-3 {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    /* Adjust text sizes for smaller screens */
+    #intro h1 {
+        font-size: 1.8rem;
+    }
+
+    #intro p {
+        font-size: 0.85rem;
+        padding: 0 15px;
+    }
+}
+
+/* ==============================
+   INTRODUCTION / PROFILE SECTION
+============================== */
+#introduction .card {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+#introduction .border-start {
+    border-left-width: 0.25rem !important;
+}
+
+#introduction h4, 
+#introduction h5 {
+    letter-spacing: 1px;
+}
+
+#introduction p {
+    line-height: 1.7;
+}
+
+#introduction .alert {
+    font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    #introduction .col-md-5,
+    #introduction .col-md-7 {
+        text-align: center !important;
+    }
+    #introduction .text-md-start {
+        text-align: center !important;
+    }
+}
+.my-works-link {
+  text-decoration: none !important;
+}
+
+.my-works-link:hover {
+  text-decoration: none !important;
+}
