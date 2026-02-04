@@ -1,0 +1,51 @@
+/* ===== Global Settings ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  min-height: 70px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .navbar-logo {
+    height: 40px;
+  }
+}
+
+/* ===== Nav Links ===== */
+.nav-link {
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.nav-link.text-primary {
+  border-bottom: 2px solid #0d6efd;
+}
+
+/* ===== Contact Section ===== */
+#contact .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+#contact a {
+  transition: color 0.3s ease;
+}
+
+#contact a:hover {
+  color: #0d6efd;
+}
+
