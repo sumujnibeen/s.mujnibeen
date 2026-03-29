@@ -1,6 +1,7 @@
 <!-- CONTACT SECTION -->
-<section id="contact" class="py-5 bg-light">
+<section id="contact" class="py-5 ">
     <div class="container px-3 px-md-5">
+
         <!-- Section Title -->
         <div class="text-center mb-5">
             <h2 class="fw-bold text-primary mb-4 text-center">Get In Touch</h2>
@@ -8,14 +9,14 @@
 
         <!-- Contact Cards Grid -->
         <div class="row g-4 rounded-4 d-flex flex-wrap justify-content-center p-4 bg-light shadow-lg">
-            
+
             <!-- Gmail Card -->
             <div class="col-md-6 col-lg-4">
                 <a href="mailto:shafiulmujnibeen@gmail.com" class="text-decoration-none">
-                    <div class="card border-0 shadow-lg rounded-4 h-100 contact-card">
+                    <div class="card border-0 h-100 contact-card">
                         <div class="card-body text-start p-4">
                             <div class="contact-icon-wrapper mb-3">
-                                <div class="contact-icon bg-gradient">
+                                <div class="contact-icon bg-gradient-danger">
                                     <i class="bi bi-envelope-fill"></i>
                                 </div>
                             </div>
@@ -33,7 +34,7 @@
             <!-- WhatsApp Card -->
             <div class="col-md-6 col-lg-4">
                 <a href="https://wa.me/8801303021166" target="_blank" class="text-decoration-none">
-                    <div class="card border-0 shadow-lg rounded-4 h-100 contact-card">
+                    <div class="card border-0 h-100 contact-card">
                         <div class="card-body text-start p-4">
                             <div class="contact-icon-wrapper mb-3">
                                 <div class="contact-icon bg-gradient-success">
@@ -54,7 +55,7 @@
             <!-- LinkedIn Card -->
             <div class="col-md-6 col-lg-4">
                 <a href="https://linkedin.com/in/shafiul-mujnibeen/" target="_blank" class="text-decoration-none">
-                    <div class="card border-0 shadow-lg rounded-4 h-100 contact-card">
+                    <div class="card border-0 h-100 contact-card">
                         <div class="card-body text-start p-4">
                             <div class="contact-icon-wrapper mb-3">
                                 <div class="contact-icon bg-gradient-primary">
@@ -75,7 +76,7 @@
             <!-- Facebook Card -->
             <div class="col-md-6 col-lg-4">
                 <a href="https://www.facebook.com/s.mujnibeen" target="_blank" class="text-decoration-none">
-                    <div class="card border-0 shadow-lg rounded-4 h-100 contact-card">
+                    <div class="card border-0 h-100 contact-card">
                         <div class="card-body text-start p-4">
                             <div class="contact-icon-wrapper mb-3">
                                 <div class="contact-icon bg-gradient-info">
@@ -96,7 +97,7 @@
             <!-- GitHub Card -->
             <div class="col-md-6 col-lg-4">
                 <a href="https://github.com/sumujnibeen" target="_blank" class="text-decoration-none">
-                    <div class="card border-0 shadow-lg rounded-4 h-100 contact-card">
+                    <div class="card border-0 h-100 contact-card">
                         <div class="card-body text-start p-4">
                             <div class="contact-icon-wrapper mb-3">
                                 <div class="contact-icon bg-gradient-dark">
@@ -116,106 +117,13 @@
 
         </div>
 
-        <!-- Call to Action -->
+        <!-- Call to Action
         <div class="text-center mt-5">
             <p class="text-muted mb-0">
                 <i class="bi bi-chat-dots-fill me-2"></i>
                 Available for freelance projects and collaborations
             </p>
-        </div>
+        </div> -->
+
     </div>
 </section>
-
-<style>
-    .contact-card {
-        background: white;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        cursor: pointer;
-        position: relative;
-    }
-
-    .contact-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
-    }
-
-    .contact-icon-wrapper {
-        display: inline-block;
-    }
-
-    .contact-icon {
-        width: 70px;
-        height: 70px;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        color: white;
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    .bg-gradient {
-        background: linear-gradient(135deg, #EA4335 0%, #C5221F 100%);
-    }
-
-    .bg-gradient-success {
-        background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-    }
-
-    .bg-gradient-primary {
-        background: linear-gradient(135deg, #0077B5 0%, #005582 100%);
-    }
-
-    .bg-gradient-info {
-        background: linear-gradient(135deg, #1877F2 0%, #0d5dbf 100%);
-    }
-
-    .bg-gradient-dark {
-        background: linear-gradient(135deg, #333 0%, #000 100%);
-    }
-
-    .contact-card:hover .contact-icon {
-        transform: scale(1.1) rotate(5deg);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    }
-
-    .contact-info {
-        padding: 10px;
-        background: #f8f9fa;
-        border-radius: 10px;
-        transition: all 0.3s ease;
-    }
-
-    .contact-card:hover .contact-info {
-        background: #e9ecef;
-        transform: translateX(5px);
-    }
-
-    @media (max-width: 768px) {
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            font-size: 1.75rem;
-        }
-    }
-</style>
-<script>
-    document.querySelectorAll('.contact-card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-        });
-    });
-
-    document.querySelectorAll('.contact-card').forEach(card => {
-        card.addEventListener('click', function() {
-            this.classList.add('animate__pulse');
-            setTimeout(() => {
-                this.classList.remove('animate__pulse');
-            }, 500);
-        });
-    });
-
-</script>
-
