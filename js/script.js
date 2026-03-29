@@ -17,7 +17,7 @@ function loadHTML(id, file, callback) {
 loadHTML("header", "components/navbar.html");
 loadHTML("intro", "components/intro.html");
 loadHTML("introduction", "components/introduction.html");
-loadHTML("my_works", "components/my_works.html", initMyWorks);  // 👈 Added callback
+loadHTML("my_works", "components/my_works.html", initMyWorks);
 loadHTML("experience", "components/experience.html");
 loadHTML("education", "components/education.html");
 loadHTML("contact", "components/contact.html");
@@ -45,7 +45,7 @@ function initMyWorks() {
     btn.addEventListener("click", function(e) {
       e.preventDefault();
       e.stopPropagation();
-      
+
       const target = this.dataset.target;
       console.log("Clicked:", target);
 
@@ -65,7 +65,7 @@ function initMyWorks() {
     });
   });
 
-  console.log(" My Works navigation initialized successfully!");
+  console.log("My Works navigation initialized successfully!");
 }
 
 // ==========================
@@ -97,23 +97,114 @@ document.addEventListener("click", function (e) {
 
 // ==========================
 // Highlight navbar link on scroll
+// — Uses 80% from bottom rule (20% from top)
+// — When multiple sections visible, highlights the one that's most prominent
+// — At bottom of page, highlights contact section
 // ==========================
 window.addEventListener("scroll", () => {
-  const sections = document.querySelectorAll("section[id]");
-  const scrollPos = window.scrollY + 80; // offset for navbar
-
-  sections.forEach((section) => {
-    const top = section.offsetTop;
-    const bottom = top + section.offsetHeight;
-    const id = section.getAttribute("id");
-    const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
-
-    if (scrollPos >= top && scrollPos < bottom) {
-      navLink?.classList.add("active");
-    } else {
-      navLink?.classList.remove("active");
+  const navLinks = document.querySelectorAll(".nav-link[href^='#']");
+  const scrollPosition = window.scrollY;
+  const viewportHeight = window.innerHeight;
+  const documentHeight = document.documentElement.scrollHeight;
+  
+  // Check if scrolled to bottom (within 50px)
+  const isAtBottom = scrollPosition + viewportHeight >= documentHeight - 50;
+  
+  if (isAtBottom) {
+    // At bottom, highlight contact section
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#contact") {
+        link.classList.add("active");
+      }
+    });
+    return;
+  }
+  
+  // Calculate the point that is 20% from the top of viewport (80% from bottom)
+  // This is the "trigger point" - sections are considered active when they occupy this area
+  const triggerPoint = scrollPosition + viewportHeight * 0.2;
+  
+  let bestMatch = {
+    id: "",
+    score: -1
+  };
+  
+  navLinks.forEach((link) => {
+    const id = link.getAttribute("href").substring(1);
+    const section = document.getElementById(id);
+    if (!section) return;
+    
+    const sectionTop = section.offsetTop;
+    const sectionBottom = sectionTop + section.offsetHeight;
+    
+    // Calculate how much of the trigger point is within this section
+    // Higher score means the trigger point is deeper within the section
+    if (triggerPoint >= sectionTop && triggerPoint <= sectionBottom) {
+      // Section contains the trigger point - this is the primary candidate
+      const depth = triggerPoint - sectionTop;
+      const percentage = depth / section.offsetHeight;
+      // Higher score for sections where trigger point is lower (more visible)
+      bestMatch = {
+        id: id,
+        score: percentage,
+        link: link
+      };
+    } else if (triggerPoint > sectionBottom) {
+      // Trigger point has passed this section, but track as fallback
+      // Give higher score to sections that are closer to the trigger point
+      const distance = triggerPoint - sectionBottom;
+      const fallbackScore = 1 - (distance / viewportHeight);
+      if (fallbackScore > bestMatch.score && fallbackScore > 0) {
+        bestMatch = {
+          id: id,
+          score: fallbackScore,
+          link: link
+        };
+      }
     }
   });
+  
+  // If no section contains the trigger point, find the section that is most visible
+  if (bestMatch.id === "" && bestMatch.score === -1) {
+    let maxVisibility = 0;
+    navLinks.forEach((link) => {
+      const id = link.getAttribute("href").substring(1);
+      const section = document.getElementById(id);
+      if (!section) return;
+      
+      const sectionTop = section.offsetTop;
+      const sectionBottom = sectionTop + section.offsetHeight;
+      const visibleTop = Math.max(sectionTop, scrollPosition);
+      const visibleBottom = Math.min(sectionBottom, scrollPosition + viewportHeight);
+      const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+      const visibilityRatio = visibleHeight / section.offsetHeight;
+      
+      if (visibilityRatio > maxVisibility) {
+        maxVisibility = visibilityRatio;
+        bestMatch.id = id;
+        bestMatch.link = link;
+      }
+    });
+  }
+  
+  // Update active class
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (bestMatch.link && link === bestMatch.link) {
+      link.classList.add("active");
+    }
+  });
+  
+  // Special case: if at top of page, highlight introduction
+  if (scrollPosition < 100) {
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#introduction") {
+        link.classList.add("active");
+      }
+    });
+  }
 });
 
 // ==========================
@@ -139,4 +230,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (yearElem) {
     yearElem.innerText = new Date().getFullYear();
   }
+});
+
+// ==========================
+// Trigger scroll on load to set initial active state
+// ==========================
+window.addEventListener("load", () => {
+  // Small delay to ensure all sections are loaded
+  setTimeout(() => {
+    window.dispatchEvent(new Event('scroll'));
+  }, 100);
 });
