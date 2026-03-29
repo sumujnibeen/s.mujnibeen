@@ -1197,3 +1197,18 @@ body {
 section {
   background: #f0f5ff !important;
 }
+@media (max-width: 767.98px) {
+  #introduction .col-md-5 p.text-secondary.small {
+    text-align: center !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    letter-spacing: 0.5px;
+  }
+
+  #introduction .col-md-5 p.text-secondary.small span {
+    display: block;
+    text-align: center;
+  }
+}
