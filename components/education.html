@@ -6,8 +6,10 @@
         </div>
 
         <div class="row g-4 rounded-4 d-flex flex-wrap justify-content-center p-4 bg-light shadow-lg">
+
+            <!-- Card 1: BSc -->
             <div class="col-md-6 col-lg-4">
-                <div class="card border-0 shadow-lg rounded-4 h-100 education-card">
+                <div class="card border-0 h-100 education-card">
                     <div class="card-body text-start p-4">
                         <div class="d-flex align-items-center mb-3">
                             <div class="logo-box bg-primary bg-opacity-10 rounded p-2 me-3">
@@ -37,8 +39,9 @@
                 </div>
             </div>
 
+            <!-- Card 2: HSC -->
             <div class="col-md-6 col-lg-4">
-                <div class="card border-0 shadow-lg rounded-4 h-100 education-card">
+                <div class="card border-0 h-100 education-card">
                     <div class="card-body text-start p-4">
                         <div class="d-flex align-items-center mb-3">
                             <div class="logo-box bg-success bg-opacity-10 rounded p-2 me-3">
@@ -68,8 +71,9 @@
                 </div>
             </div>
 
+            <!-- Card 3: SSC -->
             <div class="col-md-6 col-lg-4">
-                <div class="card border-0 shadow-lg rounded-4 h-100 education-card">
+                <div class="card border-0 h-100 education-card">
                     <div class="card-body text-start p-4">
                         <div class="d-flex align-items-center mb-3">
                             <div class="logo-box bg-danger bg-opacity-10 rounded p-2 me-3">
@@ -102,50 +106,3 @@
         </div>
     </div>
 </section>
-<style>
-    .education-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
-    }
-
-    .education-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
-    }
-
-    .logo-box {
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
-
-    .institution-logo {
-        max-width: 50px;
-        max-height: 50px;
-        object-fit: contain;
-    }
-
-    .badge {
-        font-weight: 500;
-        padding: 0.4rem 0.8rem;
-    }
-</style>
-<script>
-    document.querySelectorAll('.education-card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-        });
-    });
-
-    document.querySelectorAll('.education-card').forEach(card => {
-        card.addEventListener('click', function() {
-            this.classList.add('animate__pulse');
-            setTimeout(() => {
-                this.classList.remove('animate__pulse');
-            }, 500);
-        });
-    });
-</script>
