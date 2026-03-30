@@ -1235,8 +1235,17 @@ section {
 
 }
 /* ==============================
-   INTRODUCTION — R&D LIST LEFT ALIGN
+   INTRODUCTION — R&D LIST FIX MOBILE
 ============================== */
 #introduction .border-start ul.list-unstyled {
   text-align: left !important;
+  padding-left: 0.5rem !important;
+}
+
+#introduction .border-start ul.list-unstyled li {
+  text-align: left !important;
+  justify-content: flex-start !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.4rem !important;
 }
