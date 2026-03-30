@@ -1234,3 +1234,9 @@ section {
   }
 
 }
+/* ==============================
+   INTRODUCTION — R&D LIST LEFT ALIGN
+============================== */
+#introduction .border-start ul.list-unstyled {
+  text-align: left !important;
+}
