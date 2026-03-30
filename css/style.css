@@ -1207,4 +1207,39 @@ section {
     display: block;
   }
 }
+/* ==============================
+   INTRO — MOBILE FIXES
+============================== */
+@media (max-width: 767.98px) {
 
+  /* Fix photo overlapping navbar */
+  #intro {
+    padding-top: 80px !important;
+  }
+
+  /* Center all content vertically in remaining space */
+  #intro .section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* Description text — add side padding so it doesn't hit edges */
+  #intro .text-secondary.mb-4 {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    text-align: center !important;
+    font-size: 0.88rem !important;
+  }
+
+  /* Buttons stay centered and don't overflow */
+  #intro .d-flex.justify-content-center {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+}
